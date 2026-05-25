@@ -144,13 +144,15 @@ function addLoadingCard() {
   const card = document.createElement('div');
   card.className = 'card loading';
   card.innerHTML = `
-    <div class="card-flag"></div>
-    <div class="card-body">
-      <div class="skeleton-line medium"></div>
-      <div class="skeleton-line long"></div>
-      <div class="skeleton-line short"></div>
-      <div class="skeleton-line long"></div>
-      <div class="skeleton-line medium"></div>
+    <div class="card-inner">
+      <div class="card-flag"></div>
+      <div class="card-body">
+        <div class="skeleton-line medium"></div>
+        <div class="skeleton-line long"></div>
+        <div class="skeleton-line short"></div>
+        <div class="skeleton-line long"></div>
+        <div class="skeleton-line medium"></div>
+      </div>
     </div>
   `;
   results.appendChild(card);
@@ -171,18 +173,20 @@ function renderCard(country, key) {
 
   card.innerHTML = `
     <button class="remove-btn" aria-label="Remove ${country.name.common}" title="Remove">✕</button>
-    <img class="card-flag" src="${flagSrc}" alt="${flagAlt}" loading="lazy" />
-    <div class="card-body">
-      <h2>${country.name.common}</h2>
-      <table>
-        <tr><td>Official name</td><td>${fmt(country.name.official)}</td></tr>
-        <tr><td>Capital</td><td>${fmt(country.capital?.[0])}</td></tr>
-        <tr><td>Region</td><td>${fmt(country.region)}${country.subregion ? ' / ' + country.subregion : ''}</td></tr>
-        <tr><td>Population</td><td>${formatPopulation(country.population)}</td></tr>
-        <tr><td>Area</td><td>${formatArea(country.area)}</td></tr>
-        <tr><td>Languages</td><td>${formatLanguages(country.languages)}</td></tr>
-        <tr><td>Currencies</td><td>${formatCurrencies(country.currencies)}</td></tr>
-      </table>
+    <div class="card-inner">
+      <img class="card-flag" src="${flagSrc}" alt="${flagAlt}" loading="lazy" />
+      <div class="card-body">
+        <h2>${country.name.common}</h2>
+        <table>
+          <tr><td>Official name</td><td>${fmt(country.name.official)}</td></tr>
+          <tr><td>Capital</td><td>${fmt(country.capital?.[0])}</td></tr>
+          <tr><td>Region</td><td>${fmt(country.region)}${country.subregion ? ' / ' + country.subregion : ''}</td></tr>
+          <tr><td>Population</td><td>${formatPopulation(country.population)}</td></tr>
+          <tr><td>Area</td><td>${formatArea(country.area)}</td></tr>
+          <tr><td>Languages</td><td>${formatLanguages(country.languages)}</td></tr>
+          <tr><td>Currencies</td><td>${formatCurrencies(country.currencies)}</td></tr>
+        </table>
+      </div>
     </div>
   `;
 
