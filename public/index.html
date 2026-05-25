@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Country Compare</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Country Compare</h1>
+    <p class="subtitle">Search up to 3 countries and compare them side by side</p>
+  </header>
+
+  <main>
+    <section class="search-bar">
+      <input
+        type="text"
+        id="country-input"
+        placeholder="Type a country name and press Enter or click Add"
+        autocomplete="off"
+        maxlength="100"
+      />
+      <button id="add-btn">Add</button>
+      <button id="clear-btn" class="secondary">Clear all</button>
+    </section>
+
+    <p id="error-msg" class="error" aria-live="polite"></p>
+
+    <section id="results" class="results-grid" aria-label="Country comparison results">
+      <!-- Cards injected by app.js -->
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
